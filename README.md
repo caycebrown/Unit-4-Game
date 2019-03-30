@@ -19,7 +19,12 @@ Create Attack Button with sound
         -decrement your attack power from enemies health 
         -decrement enemies counter attack power from your health
         -update html to display both events
+        -update these the hp for both characters and atk power for the user character
         -trigger win lose events
+
+If enemy hp reaches zero remove from screen
+
+if user hp reaches zero display loss alert and end game
 
 
 
