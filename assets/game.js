@@ -53,17 +53,18 @@ var getEnemy = function(){
 };
 
 $('#attack-button').on('click', function(){
-    enemyHp -= userAtk;
-    userHp -= counter;
-    $('#user-stats').html('<p>You lost ' + counter + 'health</p>' + '<p>You did ' + userAtk + 'damage</p>');
-    $('#enemy-health').html('<p>Health: ' + enemyHp + '</p>');
-    $('#user-health').html('<p>Health: ' + userHp + '</p>');
-    userAtk += 6;
-    if (enemyHp <= 0){
-        $('#current-enemy .fighting').remove();
-        $('#enemy-health').html('<p>Health: 0</p>');
-        $('.enemy').on('click', getEnemy);
-
+    if ($('#current-enemy .fighting').length){
+        enemyHp -= userAtk;
+        userHp -= counter;
+        $('#user-stats').html('<p>You lost ' + counter + 'health</p>' + '<p>You did ' + userAtk + 'damage</p>');
+        $('#enemy-health').html('<p>Health: ' + enemyHp + '</p>');
+        $('#user-health').html('<p>Health: ' + userHp + '</p>');
+        userAtk += 6;
+        if (enemyHp <= 0){
+            $('#current-enemy .fighting').remove();
+            $('#enemy-health').html('<p>Health: 0</p>');
+            $('.enemy').on('click', getEnemy);
+        }
     }
 })
 
