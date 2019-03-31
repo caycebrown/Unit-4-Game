@@ -64,9 +64,13 @@ $('#attack-button').on('click', function(){
             $('#current-enemy .fighting').remove();
             $('#enemy-health').html('<p>Health: 0</p>');
             $('.enemy').on('click', getEnemy);
+            if ($('#enemy-bank .enemy').length == false){
+                $('#user').append('<h1>Victory!</h1>');
+                $('#attack-button').off();
+            }
         }else if (userHp <= 0){
             $('.hero').remove();
-            $('#user').html('<h2>You Lost!</h2>')
+            $('#user').html('<h1>You Lost!</h1>');
             $('#attack-button').off();
         }
     }
