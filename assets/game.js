@@ -31,6 +31,7 @@ var getHero = function(){
     $('#enemy-bank .character').removeClass('character').addClass('enemy');
     userHp = parseInt($(this).attr('hp'));
     userAtk = parseInt($(this).attr('attack'));
+    $('#user').append('<p>Health: ' + userHp + '</p>');
     $('.enemy').off('click', getHero);
     $('.enemy').on('click', getEnemy);
 };
@@ -47,6 +48,13 @@ var getEnemy = function(){
     $('.enemy').off('click', getEnemy);
     
 };
+
+$('#attack-button').on('click', function(){
+    enemyHp -= userAtk;
+    userHp -= counter;
+    $('#user-stats').html('<p>You lost ' + counter + 'health</p>' + '<p>You did ' + userAtk + 'damage</p>');
+    userAtk += 6;
+})
 
 
 
