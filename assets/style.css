@@ -89,3 +89,8 @@ img {
     font-size: 20px;
     font-weight: bold;
 }
+
+#ready {
+    font-size:30px;
+    margin-bottom: 50px;
+}

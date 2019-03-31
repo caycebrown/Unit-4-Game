@@ -3,6 +3,14 @@
 //move selected character to the your character column and assign attribut type=user
 
 
+
+var x = new Audio('assets/CharacterSelect.mp3');
+
+function audioPlay(a){
+    a.play();
+};
+
+
 var getHero = function(){
     $('#user').append(this);
     $('#user .character').addClass('hero');
@@ -17,7 +25,13 @@ var getHero = function(){
     $('.enemy').on('click', getEnemy);
 };
 
-$('#character-select .character').on('click', getHero);
+$('#ready').on('click', function(){
+    $('#character-select .character').on('click', getHero);
+    audioPlay(x);
+    $('#ready').remove();
+    $('#logo').append('<h2>Choose Your Character</h2>');
+})
+
 
 
 var getEnemy = function(){
