@@ -64,6 +64,10 @@ $('#attack-button').on('click', function(){
             $('#current-enemy .fighting').remove();
             $('#enemy-health').html('<p>Health: 0</p>');
             $('.enemy').on('click', getEnemy);
+        }else if (userHp <= 0){
+            $('.hero').remove();
+            $('#user').html('<h2>You Lost!</h2>')
+            $('#attack-button').off();
         }
     }
 })
