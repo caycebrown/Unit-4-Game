@@ -1,0 +1,19 @@
+body {
+    background-image: url("hyrule.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.row {
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.col {
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
