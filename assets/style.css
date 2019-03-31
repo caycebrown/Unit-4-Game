@@ -1,0 +1,96 @@
+body {
+    background-image: url("hyrule.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.row {
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.col {
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#smashlogo {
+    height: 200px;
+    width: 400px;
+}
+
+#title {
+    background-color: black;
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: darkorange; 
+}
+
+#enemy-health {
+    color: green;
+    font-size: 20px;
+    background-color: #dddddd;
+}
+
+#user-health {
+    color: green;
+    background-color: #dddddd;
+    font-size: 20px;
+}
+
+.col-6 {
+    align-content: center;
+    justify-content: center;
+}
+
+h3 {
+    background-color: black;
+    color: orange;
+}
+
+#character-select {
+    background: rgba(104, 104, 104, 0.9);
+    margin-bottom: 50px;
+}
+
+img {
+    padding: 15px;;
+}
+
+#enemy-bank {
+    background: rgba(104, 104, 104, 0.9);
+    min-height: 200px;
+}
+
+#attack-button {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#enemy-title {
+    color: darkorange;
+    background-color: black;
+}
+
+#user-stats {
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#enemy-stats {
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#ready {
+    font-size:30px;
+    margin-bottom: 50px;
+}
