@@ -5,13 +5,23 @@
 
 
 var x = new Audio('assets/CharacterSelect.mp3');
+var y = new Audio('assets/HyruleCastle.mp3');
+var z = new Audio('assets/ModerateHit.wav');
+var x2 = new Audio('assets/HomeRun.wav');
+var y2 = new Audio('assets/CrowdCheering.wav');
+var z2 = new Audio('assets/ClickWhoosh.wav');
 
 function audioPlay(a){
     a.play();
 };
 
+function audioOff(a){
+    a.pause();
+}
+
 
 var getHero = function(){
+    audioPlay(z2);
     $('#user').append(this);
     $('#user .character').addClass('hero');
     $('#enemy-bank').append('<h2 id="enemy-title">Choose Your<br/> Opponent</h2>');
@@ -35,6 +45,7 @@ $('#ready').on('click', function(){
 
 
 var getEnemy = function(){
+    audioPlay(z2);
     $('#current-enemy').append(this);
     $('#current-enemy .enemy').removeClass('enemy').addClass('fighting');
     enemyHp = parseInt($(this).attr('hp'));
@@ -43,11 +54,14 @@ var getEnemy = function(){
     $('#enemy-health').html('Health: ' + enemyHp);
     $('.fighting').off('click', getEnemy);
     $('.enemy').off('click', getEnemy);
+    audioOff(x);
+    audioPlay(y);
     
 };
 
 $('#attack-button').on('click', function(){
     if ($('#current-enemy .fighting').length){
+        audioPlay(z);
         enemyHp -= userAtk;
         userHp -= counter;
         $('#user-stats').html('<p>You lost ' + counter + ' health</p>' + '<p>You did ' + userAtk + ' damage</p>');
@@ -56,6 +70,7 @@ $('#attack-button').on('click', function(){
         $('#user-health').html('<p>Health: ' + userHp + '</p>');
         userAtk += 6;
         if (enemyHp <= 0){
+            audioPlay(x2);
             $('#current-enemy .fighting').remove();
             $('#enemy-stats').html('');
             $('#user-stats').html('');
@@ -63,6 +78,7 @@ $('#attack-button').on('click', function(){
             $('#enemy-health').append('<h1>Game Set</h1>');
             $('.enemy').on('click', getEnemy);
             if ($('#enemy-bank .enemy').length == false){
+                audioPlay(y2);
                 $('#enemy-title').html('<h1>Victory!</h1>');
                 $('#attack-button').off();
             }
